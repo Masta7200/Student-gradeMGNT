@@ -1,4 +1,4 @@
-# 🎓 Student Grade Management System (Python CLI)
+#  Student Grade Management System (Python CLI)
 
 This is a simple command-line application for managing students and their grades using Python’s Object-Oriented Programming features. It's designed for pre-interview assessment, showcasing your skills in:
 
@@ -10,19 +10,19 @@ This is a simple command-line application for managing students and their grades
 
 ---
 
-## 📦 Features
+##  Features
 
-- ✅ Add new students (prevents duplicate IDs)
-- ✅ Add or update student grades
-- ✅ List all students with average scores
-- ✅ Find a student by their ID
-- ✅ View the top-performing student
-- ✅ Interactive CLI menu
-- ✅ Clean and beginner-friendly code
+-  Add new students (prevents duplicate IDs)
+-  Add or update student grades
+-  List all students with average scores
+-  Find a student by their ID
+-  View the top-performing student
+-  Interactive CLI menu
+-  Clean and beginner-friendly code
 
 ---
 
-## 🏗️ Class Design
+##  Class Design
 
 ### `Student`
 
@@ -56,7 +56,7 @@ This is a simple command-line application for managing students and their grades
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ### 1. Clone the project or download the files
 
