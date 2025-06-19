@@ -124,4 +124,4 @@ class StudentManager:
 
 
 if __name__ == "__main__":
-    main()
+    StudentManager.main()
