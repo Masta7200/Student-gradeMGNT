@@ -51,3 +51,77 @@ class StudentManager:
         if not self.students:
             return None
         return max(self.students, key=lambda s: s.get_average())
+    
+    def show_menu():
+     print("\n===== STUDENT GRADE MANAGEMENT SYSTEM =====")
+     print("1. Add new student")
+     print("2. Add grade to student")
+     print("3. List all students")
+     print("4. Find student by ID")
+     print("5. Get top student")
+     print("6. Exit")
+ 
+    def main():
+        manager = StudentManager()
+
+        while True:
+            StudentManager.show_menu()
+            choice = input("Choose an option (1-6): ")
+
+            if choice == "1":
+                name = input("Enter student name: ")
+                student_id = input("Enter student ID: ")
+                student = Student(name, student_id)
+                manager.add_student(student)
+
+            elif choice == "2":
+                student_id = input("Enter student ID to add grade: ")
+                student = manager.find_student_by_id(student_id)
+                if student:
+                    subject = input("Enter subject name: ")
+                    try:
+                        score = float(input("Enter score (0-100): "))
+                        if 0 <= score <= 100:
+                            existing_grades = student.get_grades()
+                            if subject in existing_grades:
+                                print(f" Updating existing grade for '{subject}' (Old: {existing_grades[subject]})")
+                            else:
+                                print(f" Adding new grade for '{subject}'")
+                            student.add_grade(subject, score)
+                            print(" Grade saved successfully.")
+                        else:
+                            print(" Score must be between 0 and 100.")
+                    except ValueError:
+                        print(" Invalid score format.")
+                else:
+                    print(" Student not found.")
+
+            elif choice == "3":
+                manager.list_students()
+
+            elif choice == "4":
+                student_id = input("Enter student ID to find: ")
+                student = manager.find_student_by_id(student_id)
+                if student:
+                    student.display_info()
+                else:
+                    print(" Student not found.")
+
+            elif choice == "5":
+                top_student = manager.get_top_student()
+                if top_student:
+                    print(" Top Student:")
+                    top_student.display_info()
+                else:
+                    print(" No students in the system.")
+
+            elif choice == "6":
+                print("Thanks for using our system . Goodbye!")
+                break
+
+            else:
+                print(" Invalid choice. Please enter a number from 1 to 6.")
+
+
+if __name__ == "__main__":
+    main()
